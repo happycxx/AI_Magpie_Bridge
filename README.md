@@ -323,12 +323,6 @@ If it fails to start, check whether the Python path in `启动.bat` is correctly
 7. The tool parses, applies, and saves the changes automatically
 
 ## 🎬 Dynamic Demo
-====
----
-
-## 🎬 Dynamic Demo
-====
-## 🎬 Dynamic Demo
 
 ### Basic Workflow
 
