@@ -18,16 +18,16 @@
 </p>
 
 <p align="center">
-  <a href="#-项目简介">项目简介</a>｜
-  <a href="#-界面预览">界面预览</a>｜
-  <a href="#-动态演示">动态演示</a>｜
-  <a href="#-为什么需要这个工具">为什么需要这个工具</a>｜
-  <a href="#-核心功能">核心功能</a>｜
-  <a href="#-快速开始">快速开始</a>｜
-  <a href="#-完整使用示例">完整使用示例</a>｜
-  <a href="#-替换块格式">替换块格式</a>｜
-  <a href="#-常见问题">常见问题</a>｜
-  <a href="#-license">License</a>
+  <a href="#-项目简介">📌 项目简介</a>｜
+  <a href="#-界面预览">🖼️ 界面预览</a>｜
+  <a href="#-动态演示">🎬 动态演示</a>｜
+  <a href="#-为什么需要这个工具">🔥 为什么需要</a>｜
+  <a href="#-核心功能">✨ 核心功能</a>｜
+  <a href="#-快速开始">🚀 快速开始</a>｜
+  <a href="#-完整使用示例">🎯 使用示例</a>｜
+  <a href="#-替换块格式">🧾 替换块格式</a>｜
+  <a href="#-常见问题">❓ 常见问题</a>｜
+  <a href="#-license">📄 License</a>
 </p>
 
 <img src="docs/images/hero.png" alt="AI 鹊桥 / AI Magpie Bridge 封面图" width="100%">

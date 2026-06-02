@@ -19,16 +19,16 @@
 </p>
 
 <p align="center">
-  <a href="#-overview">Overview</a>｜
-  <a href="#-interface-preview">Interface Preview</a>｜
-  <a href="#-dynamic-demo">Dynamic Demo</a>｜
-  <a href="#-why-this-tool">Why This Tool</a>｜
-  <a href="#-features">Features</a>｜
-  <a href="#-quick-start">Quick Start</a>｜
-  <a href="#-full-usage-example">Full Usage Example</a>｜
-  <a href="#-replace-block-format">Replace Block Format</a>｜
-  <a href="#-faq">FAQ</a>｜
-  <a href="#-license">License</a>
+  <a href="#-overview">📌 Overview</a>｜
+  <a href="#-interface-preview">🖼️ Preview</a>｜
+  <a href="#-dynamic-demo">🎬 Demo</a>｜
+  <a href="#-why-this-tool">🔥 Why This Tool</a>｜
+  <a href="#-features">✨ Features</a>｜
+  <a href="#-quick-start">🚀 Quick Start</a>｜
+  <a href="#-full-usage-example">🎯 Usage Example</a>｜
+  <a href="#-replace-block-format">🧾 Replace Format</a>｜
+  <a href="#-faq">❓ FAQ</a>｜
+  <a href="#-license">📄 License</a>
 </p>
 
 <br>
