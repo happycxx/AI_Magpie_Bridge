@@ -30,6 +30,8 @@
   <a href="#-license">License</a>
 </p>
 
+<img src="docs/images/hero.png" alt="AI 鹊桥 / AI Magpie Bridge 封面图" width="100%">
+
 </div>
 
 ---
@@ -353,7 +355,7 @@ AI 只能输出文本。
 ```text
 ├── main.py                     # 应用入口 + 全局样式表
 ├── 启动.bat                    # Windows 启动脚本
-├── docs/images/                # README 截图与界面说明图片
+├── docs/images/                # README 封面图、截图与界面说明图片
 ├── docs/gif/                   # README 动态演示 GIF
 ├── settings.json               # 本地设置文件，运行后自动生成
 ├── key_versions/               # 关键版本备份目录，运行后自动生成
@@ -586,7 +588,7 @@ AI 鹊桥自动应用
 
 ```text
 <<<< 查找
-
+需要删除的代码
 ====
 
 >>>> 替换

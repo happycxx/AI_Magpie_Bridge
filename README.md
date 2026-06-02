@@ -20,13 +20,20 @@
 
 <p align="center">
   <a href="#-overview">Overview</a>｜
+  <a href="#-interface-preview">Interface Preview</a>｜
+  <a href="#-dynamic-demo">Dynamic Demo</a>｜
   <a href="#-why-this-tool">Why This Tool</a>｜
   <a href="#-features">Features</a>｜
   <a href="#-quick-start">Quick Start</a>｜
+  <a href="#-full-usage-example">Full Usage Example</a>｜
   <a href="#-replace-block-format">Replace Block Format</a>｜
   <a href="#-faq">FAQ</a>｜
   <a href="#-license">License</a>
 </p>
+
+<br>
+
+<img src="docs/images/hero.png" alt="AI Magpie Bridge" width="100%">
 
 </div>
 
@@ -49,6 +56,63 @@ With this tool:
 > AI outputs structured replace blocks → The tool parses them → Apply changes with one click → Save automatically
 
 The main goal of this project is to make AI-assisted programming **safer, faster, cheaper, and easier to control**.
+
+---
+
+## 🖼️ Interface Preview
+
+### Main Window
+
+The left side is the project/file tree, the center is the code editor, and the right side is the AI replace-block input and quick action area.
+
+![AI Magpie Bridge main window](docs/images/overview.png)
+
+---
+
+### Copy Current File with One Click
+
+Click **Copy All** to quickly copy the full content of the current file, then send it to ChatGPT, Claude, Gemini, or other conversational AI tools for analysis and modification.
+
+![Copy all](docs/images/copy-all.png)
+
+Useful for:
+
+- Helping AI understand the complete current file
+- Asking AI to generate replace blocks based on full context
+- Avoiding missing context caused by copying only partial code
+
+---
+
+### Copy Project Structure with One Click
+
+Click **Project Structure** to copy the current project tree to AI, helping it understand relationships between files.
+
+![Project structure](docs/images/project-structure.png)
+
+Useful for:
+
+- Multi-file modifications
+- Helping AI decide which file should contain the change
+- Asking AI to output replace blocks with `<<<< 文件:` paths
+- Helping AI better understand project layering
+
+---
+
+### Multi-language Interface
+
+Use **More → Language** to switch the UI language for different working environments.
+
+![Language menu](docs/images/language-menu.png)
+
+Currently supported:
+
+- 简体中文
+- 繁體中文
+- English
+- Français
+- Русский
+- 日本語
+- 한국어
 
 ---
 
@@ -181,6 +245,8 @@ This tool is especially useful if you:
 ```text
 ├── main.py                     # App entry + global stylesheet
 ├── 启动.bat                    # Windows launch script
+├── docs/images/                # README screenshots and interface images
+├── docs/gif/                   # README animated demo GIFs
 ├── settings.json               # Local settings, generated at runtime
 ├── key_versions/               # Key version backups
 ├── ui/                         # UI components
@@ -256,6 +322,168 @@ If it fails to start, check whether the Python path in `启动.bat` is correctly
 6. Click **Apply and Save**
 7. The tool parses, applies, and saves the changes automatically
 
+## 🎬 Dynamic Demo
+====
+---
+
+## 🎬 Dynamic Demo
+====
+## 🎬 Dynamic Demo
+
+### Basic Workflow
+
+From copying code context, asking AI to generate replace blocks, to pasting and applying changes with one click, the complete workflow is shown below:
+
+![AI Magpie Bridge basic workflow](docs/gif/basic-workflow.gif)
+
+Core workflow:
+
+```text
+1. Open the target file or project
+2. Copy the current code or project structure to AI
+3. AI returns replace blocks in the standard format
+4. Paste the replace blocks into AI Magpie Bridge
+5. The tool parses and exact-matches the old code
+6. Apply the replacement with one click and save automatically
+```
+
+---
+
+### Auto-monitoring & Clipboard Feedback Demo
+
+After auto-monitoring is enabled, copied AI replace blocks can be detected automatically. When the old code has a unique match, the tool replaces and saves automatically. If replacement fails, it avoids accidental edits and can generate feedback for AI with one click.
+
+![AI Magpie Bridge auto-monitoring workflow](docs/gif/auto-listen-workflow.gif)
+
+In auto-monitoring mode, the tool prioritizes safety:
+
+```text
+Copy valid replace blocks → Detect automatically → Unique match → Replace and save automatically
+Copy normal text → Skip automatically
+Copy incomplete content → Skip automatically
+Old code not found or matched multiple times → Do not modify files, feedback can be sent to AI
+```
+
+The goal of this design is to make auto-monitoring more efficient without sacrificing safety.
+
+---
+
+## 🎬 Full Usage Example
+
+The following example shows a complete workflow: using AI to generate a PySide6 desktop clock and applying the changes automatically with AI Magpie Bridge.
+
+### 1. Tell AI to Use the Fixed Replace Block Format
+
+Before asking ChatGPT, Claude, Gemini, or other conversational AI tools to modify code, it is recommended to first send a fixed prompt so that AI strictly follows the replace block format supported by AI Magpie Bridge.
+
+![Prompt template for AI](docs/images/prompt-template.png)
+
+AI responses should follow this format:
+
+```text
+<<<< 文件: path/to/file.py
+<<<< 查找
+old code
+====
+new code
+>>>> 替换
+```
+
+---
+
+### 2. Create a File and Drag It into AI Magpie Bridge
+
+Create a target file locally, for example:
+
+```text
+clock.py
+```
+
+Then drag the file into AI Magpie Bridge, or open it through **Add File / Project** on the left side.
+
+![Drag file into AI Magpie Bridge](docs/images/drag-file-into-app.png)
+
+---
+
+### 3. Enable Auto-Monitoring
+
+Click **Auto Monitor: On** at the top.
+
+After enabling it, you only need to copy the replace blocks returned by AI, and AI Magpie Bridge will automatically detect clipboard content.
+
+![Enable auto-monitoring](docs/images/operation-1-enable-listener.png)
+
+In auto-monitoring mode, the tool tries to complete the following flow automatically:
+
+```text
+Copy AI response → Detect replace blocks → Exact match → Replace code → Save file
+```
+
+If the format is incomplete, the old code is not found, or the old code appears multiple times, the tool skips the operation to avoid accidental edits.
+
+---
+
+### 4. Ask AI to Generate the First Runnable Version
+
+For example, ask AI:
+
+```text
+Help me create a simple PySide6 UI clock with a modern minimalist style.
+```
+
+After AI returns standard replace blocks, copy the response.
+
+![AI generated the first version](docs/images/operation-2-auto-created.png)
+
+AI Magpie Bridge detects the replace blocks from the clipboard and automatically writes the code into `clock.py`.
+
+---
+
+### 5. Local File Is Updated Automatically
+
+After successful replacement, the code appears in the local file and is saved automatically.
+
+![Code applied to local file](docs/images/operation-3-code-applied.png)
+
+This step does not require AI to directly operate on your filesystem.  
+AI only outputs text, and the actual file replacement is done locally by AI Magpie Bridge.
+
+---
+
+### 6. Continue Asking AI to Enhance the Feature
+
+You can continue describing new requirements in natural language, for example:
+
+```text
+Add a right-click menu to the clock, supporting 12/24-hour switching, seconds display toggle, and exit.
+```
+
+AI will continue returning one or more replace blocks.
+
+![Ask AI to improve](docs/images/operation-4-ask-ai-to-improve.png)
+
+---
+
+### 7. Apply the Next Changes Automatically
+
+After copying the AI response, AI Magpie Bridge continues applying the modifications automatically.
+
+![Final result](docs/images/operation-5-final-result.png)
+
+The final workflow is:
+
+```text
+Describe requirements in natural language
+↓
+AI generates replace blocks
+↓
+AI Magpie Bridge applies them automatically
+↓
+Local code is updated and saved
+```
+
+The whole process does not require an agent to directly read or write files, and it avoids manual searching and pasting.
+
 ---
 
 ## 🧾 Replace Block Format
@@ -293,7 +521,7 @@ If the content below `====` is empty, the matched code will be deleted.
 
 ```text
 <<<< 查找
-code to be deleted
+
 ====
 
 >>>> 替换
